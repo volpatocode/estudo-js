@@ -1,168 +1,70 @@
-/*
-strings = cadeia de caracteres, se usa "" ou '' ou `` (as crases permite interpolação
-ex: console.log(`Mayk e João são ${1 + 1} alunos.`)
--
+//          Tipos de dados          //
 
-number
-inteiros
-reais = quebrados
-nan // not a number
-Infinity
--
-    
-boolean
-    
-true
-false   
--
-    
-undefined = nada definido é diferente de null = nada dentro
--
+-String = cadeia de caracteres/texto '' ""      `` > pode quebrar linha, interpolação
+                                                            console.log( `João ${1 + 1} pão.`)
+                                                         
+-Number = números: inteiros, reais(float), NaN ou infinity
 
-object
-    propriedade = atributo
-    funcionalidade = metodo
-*/
-    {proprieade: "valor"}
+-Boolean = true/false
 
-    console.log({
-        name:"João",
-        idade:18,
-        andar: function() {
-            console.log('andar')
-        }
-    })
-/*
+-Undefined = não é nada
+-Null = algo sem nada dentro
 
-array = vetores = agrupamento de dados []
-*/
+-Object = propriedades/atributos        
+            funcionalidades/metodos 
+```js  
+    { propriedade: "valor",}
+```
 
-    console.log({
-        "Leite",
-        "Ovos",
-        "Fermento"
-    })
+-Array / vetores = agrupamento de dados     permite quebra de linha
+```js  
+    ["João", 36, "Pedro"]
+```
+-Function
 
-/* 
-9 tipos de dados
-
-/ data types /
-    primitive / primitive value
-    structural
-    structural primitive
-
-/ primitivos = são imutáveis/
--string
--nunber
--bBoolean
--undefined
 -Symbol
 -BigInt
 
-/ estruturai = recebe atributos e/ou funcionalidades /
--object
-    array
-    map
-    set
-    date
-    ...
--function
 
-/ primitivo estrutural /
+//             Variáveis              //
+```js
 
--null
--
+    var clima = "Quente"
+    let clima = "Frio"          variáveis declaradas e atribuídas com valores
+    const name = "João"
 
+```
+var -- global  
+let -- local
+const -- local -- não muda o valor
 
+-Declaração de variáveis conjuntas:
+```js  
+    let age, isHuman, number, name
 
-/ variáveis /
-
-- são nomes simbólicos que recebem algum valor
-- atalhos de código
-- identifiers
-
-    var
-    let
-    const = não muda
-
-    let e const são mais utilizados
-*/
-    //no html//
-    var clima = ("quente")
-
-    console.log("clima")
-
-/* concatenando e interpolando valores*/
-
-    let name, age, isHuman
-
-    name = João
-    age = 15
+    age = 18
     isHuman = true
-    
+    number = 23
+    name = "João"
 
-    console.log ('o' + name + ' tem ' + age ' anos.')
+    console.log(name, age, isHuman, number)
+```
 
-    -
+//             Scope               //
 
-    console.log(`o ${name} tem ${age} anos.`)
+- Determina a visibilidade de uma variável
 
-// Object
+- var = global; funciona fora do escopo
+- let & const = local; só funcionam no escopo atual
+- var sofre hoisting
+- let e const não sofrem hoisting
+- let pode ser alterado o valor puxando de um escopo de fora
 
-    const person = {
-        name: João,
-        age: 18,
-        weight: 78.5,
-        isAdmin: true
-    }
-
-    console.log(person.age) // mostra somente a idade
-    console.log(`${name.person} tem ${person.age} anos.`)
-
-
-// Arrays
-
-    const animals = {
-        'Lion',
-        'Monkey',
-        {
-            name:'Cat',
-            age:3
-        }
-    }
-
-    console.log(animals[0]) //escolhe um atributo
-    console.log(animals[2].name) //escolhe um atributo e seleciona o valor
-
-    console.log(animals.lenght) // demonstra o total
-
-
-    
-function createPhrases() {
-    console.log('Estudar é muito ruim')
-}
-
-createPhrases()
-
-
-// function expression
-// function anonymous
-
-
-//                      parameters
-
-const sum = function(number1, number2) {
-    console.log(number1+number2)
-}
-
-
-sum(2, 3) // arguments
-
-let number1 = 34
-let number2 = 25
-//sum (number1, number2)
-
-
-console.log(`o número 1 é ${number1}`)
-console.log(`o número 2 é ${number2}`)
-
+//          Concatenação e Interpolação          //
+```js
+    let paes = 22
+    let name = "João"
+//concatenação
+    console.log(`o ` + name `comprou ` + paes `.`)
+//interpolação - templetate literals/strings
+    console.log(`o ${name} comprou ${paes} .`)
