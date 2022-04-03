@@ -17,13 +17,12 @@
     { propriedade: "valor",}
 ```
 
--Array / vetores = agrupamento de dados     permite quebra de linha
+//  Array = agrupamento de dados/permite quebra de linha//
 ```js  
 
     ["João", 36, "Pedro"]
 ```
 -Function
-
 -Symbol
 -BigInt
 
@@ -32,7 +31,7 @@
 ```js
 
     var clima = "Quente"
-    let clima = "Frio"          variáveis declaradas e atribuídas com valores
+    let clima = "Frio"          // variáveis declaradas e atribuídas com valores
     const name = "João"
 
 ```
@@ -44,7 +43,6 @@ const -- local -- não muda o valor
 ```js  
 
     let age, isHuman, number, name     // declaração de variáveis conjuntas
-
     age = 18
     isHuman = true
     number = 23
@@ -56,7 +54,6 @@ const -- local -- não muda o valor
 //             Scope               //
 
 - Determina a visibilidade de uma variável
-
 - var = global; funciona fora do escopo
 - let & const = local; só funcionam no escopo atual
 - var sofre hoisting
@@ -72,6 +69,7 @@ const -- local -- não muda o valor
     console.log(`o ` + name `comprou ` + paes `.`)
 //interpolação - templetate literals/strings
     console.log(`o ${name} comprou ${paes} .`)
+
 ```
 
 //          Object          //
@@ -111,6 +109,7 @@ nameFunction()  // chama a função
 const sum = function(number1, number2) {          // função anonima / expression
     let total = number1 + number2 
     return total       // soma os dois numeros recebidos/ so funciona dentro do escopo
+
 }
 
 // os "()" representam parametros que estão sendo recebidos
@@ -131,9 +130,6 @@ function fazerSuco(fruta1, fruta2) {
 const copo = fazerSuco ('banana', 'maça')
 
 console.log(`Você fez um suco de ${copo}.`)
-```
-// // // // // // // // // 
-```js
 
 //Função denominadas function sofrem hoisting
 
@@ -232,6 +228,247 @@ let number = 125.55456111
 console.log(number.toFixed(2).replace(".", ","))   // replace troca o caracter por outro
 
 // Transformar letras minúsculas em maiusculas - viceversa
+
+let word = "Programar é muito bacana!"
+console.log(word.toUpperCase())     // maiuscula
+console.log(word.toLowerCase())     // minuscula
+
+// Manipulando caracter // // split e join
+
+let phrase = "I wanna be free!"
+let myArray = phrase.split(" ") // retira o caracter e separa em array
+let phraseWithUnderscore = myArray.join("_") // junta/separa pelo caracter
+console.log(phraseWithUnderscore) //exibindo "I_wanna_be_free!"
+
+// Verificando caracteres // // includes
+
+let phrase = "Eu quero viver o Amor!"   
+console.log(phrase.includes("Amor")) //maiusculas e minusculas importam
+
+// Criar array com construtor // new
+
+let myArray = new Array('a', 'b', 'c')
+console.log(myArray)
+
+// Contar elementos de um array //new e length
+
+let myArray = new Array('aranha', 'boa', 'cavalo')
+console.log(myArray.length)
+
+// Transformar string em elementos de array //from
+
+let word = "manipulação"
+console.log(Array.from(word))
+
+// push, unshift, pop, shift, slice, splice, indexOf
+
+let techs = ["html", "css", "js"]
+
+techs.push("nodejs") // adiciona como ultimo do array
+
+techs.unshift("sql") // adiciona como primeiro
+
+techs.pop() // remove o ultimo item do array
+
+techs.shift() // remove o primeiro item do array
+
+console.log(techs.slice(1, 3)) // retorna os elementos com base na posição
+
+techs.splice(1,1) // retira um elemento do array, com base na posição e quantidade a partir desejada //posição começa do 0
+
+let index = techs.indexOf('css') //faz uma busca pelo elemento no array
+console.log(index)
+```
+
+//          Expressões e Operadores         //
+```js
+
+// new -  cria um novo objeto
+
+let name = new String("João")
+name.surName = "Volpato"
+let age = new Number(18)
+console.log(name, age)
+
+// typeof - diz o tipo de dado
+
+let age = 18
+console.log(typeof age)
+
+// delete - deleta uma propriedade do objeto
+
+const person = {
+    name:"João",
+    age: 18
+}
+delete person.age
+console.log(person)
+```
+
+// Operadores Aritiméticos //
+```js
+
+//multiplicação
+
+console.log(3.2 * 5.2) // exibe 16.64
+
+//divisão
+
+console.log(10 / 2) // exibe 5
+
+//soma
+
+console.log(10 + 4) // exibe 14
+
+//subtração
+
+console.log(10 - 2) // exibe 8
+
+//resto da divisão
+
+let remainder
+
+remainder = 11 % 10
+
+console.log(remainder) // exibe 1
+
+//incremento - incrementa um valor
+
+let increment = 0
+increment++         
+console.log(increment) // exibe 1
+
+//decremento - diminui um valor
+
+let decrement = 2
+decrement--    
+console.log(decrement) // exibe 1
+
+//exponencial - elevação
+
+console.log(3 ** 3) // exibe 27
+
+//grouping operator - matemática
+
+let total = 2 + 3 * 5
+console.log(total) // exibe 17
+
+let total = (2 + 3)*5
+console.log(total) // exibe 25
+
+//operadores de comparação
+
+let one = 1
+let two = 2
+
+// == significa igual a
+
+console.log(two == 1) // exibe false
+console.log(one == "1") // exibe true
+
+// != significa diferente de
+
+console.log(one != two) // exibe true
+console.log(one != 1) // exibe false
+console.log(one != "1") // exibe false
+
+// === significa estritamente igual a
+
+console.log(one === "1") // exibe false
+console.log(one === 1) // exibe true
+
+// !== significa estritamente diferente de
+
+console.log(two !== "2") // exibe true
+console.log(two !== 2) // exibe false
+
+// > maior que
+
+let one = 1
+let two = 2
+
+console.log(one > two) // exibe false
+
+// >= maior ou igual a
+
+console.log(one >= 1) // exibe true
+console.log(two >= 1) // exibe true
+
+// < menor que
+
+console.log(one < two) // exibe true
+
+// <= menor ou igual a
+
+console.log(one <= two) // exibe true
+console.log(one <= 1) // exibe true
+console.log(one <= 0) // exibe false
+
+// Operadores de atribuição //
+
+// assignment
+
+x = 1
+console.log(x) // exibe 1
+
+// addition assignment
+
+x = 1
+x += 2 // x = x + 2
+console.log(x) // exibe 3
+
+// subtraction assignment
+
+x = 1
+x -= 1 // x = x - 1
+console.log(x) // exibe 0
+
+// multiplication assignment
+
+x = 1
+x *= 2 // x = x * 2
+console.log(x) // exibe 2
+
+// division assignment
+
+x = 10
+x /= 2 // x = x / 2
+console.log(x) // exibe 5
+
+// remainder assignment
+
+x = 4
+x %= 2 // x = x % 2
+console.log(x) // exibe 0
+
+// exponietation assignment
+
+x = 4
+x **= 2 // x = x ** 2
+console.log(x) // exibe 16
+```
+
+//          Operadores lógicos          //
+```js
+
+// and &&
+
+let pao = true
+let queijo = true
+console.log(pao && queijo) // exibe true
+
+let pao = true
+let queijo = false
+console.log(pao && queijo) // exibe false
+
+// or ||
+
+let pao = true
+let queijo = false
+console.log(pao || queijo) // exibe true - basta um dos elementos
+
+// not !
+
 
 
 
