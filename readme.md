@@ -451,7 +451,7 @@ console.log(x) // exibe 16
 //          Operadores lógicos          //
 ```js
 
-// and &&
+// and &&   ==  os dois elementos tem que ser iguais
 
 let pao = true
 let queijo = true
@@ -461,15 +461,136 @@ let pao = true
 let queijo = false
 console.log(pao && queijo) // exibe false
 
-// or ||
+// or ||     - basta um dos elementos
 
 let pao = true
 let queijo = false
-console.log(pao || queijo) // exibe true - basta um dos elementos
+console.log(pao || queijo) // exibe true
 
-// not !
+// not !   - troca de valor
+
+let pao = true
+let queijo = false
+console.log(!pao) // exibe false
+console.log(!queijo) // exibe true
+```
+
+//          Operador Condicional            //
+```js
+
+//      Operador Ternário         //
+// condição entao valor 1 se não valor 2
+// contidion ? value1 : value2
+
+// ex café
+let pao = true
+let queijo = true
+
+const niceBreakfast = pao && queijo ? "café top" : "café ruim"
+console.log(niceBreakfast) // exibe café top
+
+// ex maior de 18
+
+let age = 16
+const canDrive = age >= 18 ? "can drive" : "can't drive"
+console.log(canDrive) // exibe can't drive
+
+//      String Operator        //
+
+//comparação
+
+console.log('a' == 'a') // exibe true
+
+// concatenação
+
+console.log('a' + 'bc') // exibe abc
+```
+//          If e else           //
+```js
+
+// exemplo medir febre
+
+let temperature = 36.5
+
+if(temperature >= 37){
+    console.log("está com febre")
+} else {   
+    console.log("não está febril")
+}
+
+// exemplo com multi-condicional
+
+let temperature = 36.5
+
+if(temperature >= 37.5){
+    console.log("Febre alta")
+} else if(temperature >= 37){   
+    console.log("Febra baixa")
+} else{
+    console.log("Saudável")
+}
+
+// exemplo com parametros da condicional na variável
+
+let temperature = 36.9
+let highTemperature = temperature >= 37.5
+let mediumTemperature = temperature <37.5 && temperature >=37
+
+if(highTemperature) {
+    console.log('Febre alta')
+} else if (mediumTemperature){
+    console.log("Febre moderada")
+} else {
+    console.log("Saudável")
+}
+```
+//          switch          //
+```js
+
+// case = caso
+// break serve para parar a função
+
+let expression = "a"
+
+switch(expression){
+    case 'a':
+        console.log("a")
+        break
+    case "b":
+        console.log("b")
+        break
+    default:
+        console.log("default")
+        break
+}
 
 
+// ex com calculadora simples
+
+function calculate(number1, operator, number2) {
+    let result = 0;
+
+    switch(operator) {
+        case '+':
+            result = number1 + number2
+            break
+        case '-':
+            result = number1 - number2
+            break
+        case '*':
+            result = number1 * number2
+            break
+        case '/':
+            result = number1 / number2
+            break
+        default:
+            console.log('nao implementado')
+            break
+    }
+        return result
+}
+
+console.log(calculate(1, '+', 3)) // exibe 4
 
 
 
