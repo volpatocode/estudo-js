@@ -592,7 +592,27 @@ function calculate(number1, operator, number2) {
 
 console.log(calculate(1, '+', 3)) // exibe 4
 
+```
 
+//          throw e try catch          //
+```js
+
+// try tenta rodar uma função
+// catch captura o erro sem parar a aplicação
+
+function sayMyName(name = '') {
+    if (name === '') {
+        throw new Error("Campo obrigatório")
+    }
+    console.log(name)
+}
+
+try {
+    sayMyName()
+} catch(e) {
+    console.log(e)
+}
+console.log("apos a função do erro")
 
 
 
