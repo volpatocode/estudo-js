@@ -613,6 +613,144 @@ try {
     console.log(e)
 }
 console.log("apos a função do erro")
+```
+
+//          Estruturas de repetição         //
+
+
+//      for     //
+```js
+
+//for( declaração; verificação; ação) - estrutura
+
+for(let i = 1; i <= 10; i++) {
+    console.log(i)
+} // aumenta a variavel i = 1 até 10
+
+//break - para  a condição
+
+for(let i = 1; i <= 10; i++) {
+    if(i === 8) {
+        console.log(i)
+        break;
+    } // para a condição caso chegue em 8
+} 
+
+// continue - pula a execução do momento
+
+for(let i = 1; i <= 10; i++) {
+    if(i === 8) {
+        continue;
+    } // pula o numero 8
+    console.log(i)
+} 
+```
+
+//      while       // - utilizado quando não se sabe o momento da parada
+```js
+
+let i = 0
+while(i <=10) {
+    console.log(i) // enquanto
+
+    i++
+}
+```
+
+//      for of      // - cria um loop com alguma variável ja existente
+```js
+
+let names = ['João', 'Paulo', 'Pedro']
+for(let name of names) { // pega um elemento de cada vez e guarda na variavel
+    console.log(name)
+}
+```
+
+//      for in      // - cria um loop com as propriedades de um objeto
+```js
+
+let person = {
+    name: "João",
+    age: 18,
+    weight: 78.5
+}
+
+for(let property in person) { //pega cada propriedade do objeto
+    console.log(property)
+    console.log(person[property])
+}
+```
+
+//          Atividades Rocketseat           //
+```js
+// Sistema de notas escolares //
+
+function getScore(grade) {
+    let gradeA = grade >=90
+    let gradeB = grade >=80
+    let gradeC = grade >=70
+    let gradeD = grade >=60
+    let gradeF = grade < 60 
+    let scoreFinal;
+
+    if (gradeA) {
+        scoreFinal = 'A'
+    } else if(gradeB) {
+        scoreFinal = 'B'
+    } else if(gradeC) {
+        scoreFinal = 'C'
+    } else if(gradeD) {
+        scoreFinal = 'D'
+    } else if(gradeF) {
+        scoreFinal = 'F'
+    } else {
+        scoreFinal = "Nota inválida"
+    } 
+    return scoreFinal
+} 
+console.log(getScore(100))
+
+
+// Sistema de gastos familiares //
+
+let family = {
+    incomes:[200, 700, 424, 333],
+    expenses:[555, 122, 8888]
+}
+
+function sum(array){
+    let total = 0
+
+    for(let value of array) {
+        total += value
+    }
+    return total
+}
+
+function calculateBalance() {
+    const calculateIncomes = sum(family.incomes)
+    const calculateExpenses = sum(family.expenses)
+
+    const total = calculateIncomes - calculateExpenses
+
+    const positive = total >= 0
+
+    let balanceText = "negativo"
+
+    if(positive) {
+        balanceText = "positivo"
+    }
+
+    console.log(`Seu saldo é ${balanceText}, uma quantida de: ${total}.`)
+    
+   
+}
+
+calculateBalance()
+
+
+
+
 
 
 
