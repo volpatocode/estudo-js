@@ -750,20 +750,20 @@ calculateBalance()
 // Transformador de temperatura //
 
 function transformDegree(degree) {
-    const celsiusExists = degree.toUppercase().includes("C")
-    const fahrenheitsExists = degree.toUppercase().includes("F")
+    const celsiusExists = degree.toUpperCCase().includes("C")
+    const fahrenheitsExists = degree.toUpperCase().includes("F")
 
 
     if(!celsiusExists && !fahrenheitsExists) {
         throw new Error('Grau não identificado')
     }
 
-    let updatedDegree = Number(degree.toUppercase().replace("F", ""))
+    let updatedDegree = Number(degree.toUpperCase().replace("F", ""))
     let formula = fahrenheit => (fahrenheit - 32) * 5/9
     let degreeSign = "C"
 
     if(celsiusExists) {
-        updatedDegree = Number(degree.toUppercase().replace("C", ""))
+        updatedDegree = Number(degree.toUpperCase().replace("C", ""))
         formula = celsius => celsius * 9/5 + 32
         degreeSign = "F"
     }
@@ -775,6 +775,9 @@ try {
 } catch(Error) {
     console.log(Error.message)
 }
+
+```
+//                   //
 
 
 
